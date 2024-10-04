@@ -1,37 +1,828 @@
+/* GENERAL SETTINGS */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
     text-decoration: none;
-    list-style-type: none;
+    list-style: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+::-webkit-scrollbar {
+    width: 0px;
+}
 
-section.head {
+@font-face {
+    font-family: "Berkslund";
+    src: local("Berkslund Bold"), local("Berkslund-Bold"),
+        url("Berkslund-Bold.woff2") format("woff2"),
+        url("Berkslund-Bold.woff") format("woff"),
+        url("Berkslund-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --greyblue: #1e2851;
+    --medium-blue: #2f00bdff;
+    --byzantine-blue: #1c4fcdff;
+    --french-blue: #1276d5ff;
+    --celestial-blue: #089ddcff;
+    --sky-blue: #84ceeeff;
+    --columbia-blue: #c2e7f7ff;
+    --white: #ffffffff;
+    --navcolor: #18013565;
+}
+
+h2 {
+    padding: 40px;
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Dosis", sans-serif;
+    color: #fff;
+}
+
+h3 {
+    font-style: italic;
+    padding: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Dosis", sans-serif;
+    color: #fff;
+}
+
+/*........................................................................................................................................................................................................................................... */
+
+/* ANIMATION GENERALS */
+
+@keyframes flecha {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    99% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes neon {
+    0% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    10% {
+        opacity: 1;
+        text-shadow: 0px 0px 16px#fff;
+    }
+
+    20% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    30% {
+        opacity: 1;
+        text-shadow: 0px 0px 16px#fff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    70% {
+        opacity: 1;
+        text-shadow: 0px 0px 16px#fff;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0px);
+        text-shadow: 0px 0px 10pxvar (--french-blue);
+    }
+
+    20% {
+        transform: translateY(-12rem);
+        color: var(--byzantine-blue);
+        text-shadow: 0px 0px 10px var(--byzantine-blue);
+    }
+
+    40% {
+        transform: translateY(-24rem);
+        color: rgb(110, 68, 237);
+        text-shadow: 0px 0px 10px var(--medium-blue);
+    }
+
+    60% {
+        transform: translateY(-36rem);
+        color: var(--white);
+        text-shadow: 0px 0px 10px var(--sky-blue);
+    }
+
+    80% {
+        transform: translateY(-48rem);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+body {
+    background-color: var(--greyblue);
+}
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ................_____________________________------------------- */
+
+/* ESTILOS DE LOGO - NAV */
+
+nav {
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11111110;
+    transition: all 1s;
+}
+
+.sticky {
+    background-color: var(--navcolor);
+    backdrop-filter: blur(10px);
+    z-index: 11111110;
+    padding: 5px;
+    border-radius: 0 0 20px 20px;
+}
+
+#LOGO-DALU {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+#logo-svg {
+    height: 50px;
+    width: 50px;
+    filter: invert(100%) drop-shadow(0px 3px 3px #000);
+    backdrop-filter: drop-shadow(10px);
+}
+
+#logo-name {
+    font-family: "Berkslund";
+    color: var(--white);
+    font-size: 2rem;
+    text-shadow: 0px 3px 3px #000;
+}
+
+#links-list {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5vw;
+    padding: 10px;
+}
+
+#links-list li a {
+    font-size: 1.3rem;
+    transition: 0.8s;
+}
+
+#links-list li a:hover {
+    color: var(--celestial-blue);
+}
+
+/* ---------        ----------- */
+
+/* ESTILOS DE HEADER */
+
+#logoname- {
+    font-family: "Berkslund";
+    color: var(--medium-blue);
+    font-size: 10rem;
+    font-weight: 900;
+    text-shadow: 10px 10px 10px #00000097;
+}
+
+header {
+    background-image: url(../Resources/Diseño\ sin\ título.svg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+}
+
+#logo-slogan {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.header-logo {
+    font-weight: 700;
+    font-family: "Alegreya Sans SC", sans-serif;
+    color: var(--white);
+    font-size: 10rem;
+}
+
+#translatexy {
+    transform: translateX(-100px) translateY(-20px);
+}
+
+#translate-xy {
+    transform: translateX(100px) translateY(-20px);
+}
+
+#btn-start {
+    text-align: center;
+    border: solid 2px var(--white);
+    background-color: transparent;
+    width: 210px;
+    padding: 15px;
+    border-radius: 50px;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.8s;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-scroll:hover #more {
+    animation: flecha 0.8s infinite ease-in-out;
+}
+
+.btn-scroll {
+    position: relative;
+    width: 210px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(100px);
+}
+
+#btn-start:hover {
+    letter-spacing: 3px;
+    box-shadow: 0px 4px 40px rgb(62, 2, 240);
+    transition: 0.8s;
+    border: solid 3px var(--white);
+}
+
+#animation-roll {
+    display: inline-flex;
+    overflow: hidden;
+    width: 25rem;
+    height: 11rem;
+}
+
+#animation-roll>p {
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 10rem;
+    font-weight: 600;
+    color: var(--celestial-blue);
+    animation: scroll 4.5s infinite cubic-bezier(0.95, 0.45, 0.24, 1);
+}
+
+/* ---------        ----------- */
+
+/* ESTILOS DE GET STARTED */
+#HOMEPAGE {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e2851;
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.pps {
+    text-align: center;
+    width: 40vw;
+    font-family: "DOSIS", sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.ps {
+    text-align: center;
+    width: 40vw;
+    font-family: "DOSIS", sans-serif;
+    font-size: 2rem;
+    color: var(--celestial-blue);
+}
+
+#p-cnt {
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.glow {
+    padding: 40px;
+    text-align: center;
+    font-size: 4rem;
+    background: linear-gradient(-90deg,
+            rgba(28, 79, 205, 1) 0%,
+            rgba(8, 157, 220, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#asd {
+    width: 40vw;
+    height: 100vh;
+    background-attachment: fixed;
+    background-image: url("../Resources/bck-hp.jpg");
+}
+
+.grad {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 40vw;
+    height: 100vh;
+    background-size: cover;
+    background: var(--greyblue);
+    background: linear-gradient(90deg, var(--greyblue) 0%, #1e28513c 58%);
+}
+
+.grad .flotantes:nth-child(odd) {
+    margin: 0 0 0 300px;
+    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.flotantes:nth-child(even) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0px 0 0px;
+    justify-self: flex-end;
+}
+
+.flotantes>p {
+    animation: float 4s infinite;
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px var(--byzantine-blue);
+}
+
+#DALU {
+    font-style: normal;
+    font-family: "Berkslund";
+    text-shadow: 0px 0px 10px var(--medium-blue);
+}
+
+#sec-hp {
+    padding: 5vh 0 0 10px;
+    width: 100vw;
+    height: 110vh;
+    background-color: #1e2851;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-sec-hp {
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-sec-hp>p {
+    font-size: 1.3rem;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.shadow-svg {
+    width: 25vw;
+    height: 25vh;
+    filter: drop-shadow(0px 0px 3px var(--french-blue)) contrast(150%);
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.h3-sec-hp {
+    font-size: 1.7rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--celestial-blue);
+}
+
+.h3-sec-hp::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 5px;
+    background: rgb(28, 79, 205);
+    background: linear-gradient(90deg,
+            rgba(28, 79, 205, 1) 0%,
+            rgba(8, 157, 220, 1) 100%);
+    border-radius: 10px;
+}
+
+#txt-cnt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+}
+
+#txt-cnt p {
+    font-size: 2rem;
+}
+
+.txt-grad {
+    font-style: normal;
+    padding: 0px;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--celestial-blue);
+    font-weight: 600;
+    text-wrap: balance;
+    font-family: "Alegreya Sans SC", sans-serif;
+}
+
+.txt-grad::after {
+    content: "";
+    display: block;
+    background: linear-gradient(100deg,
+            rgba(28, 79, 205, 1) 0%,
+            rgba(8, 157, 220, 1) 100%);
+    height: 15rem;
+    width: 8px;
+    border-radius: 10px;
+    transform: translateX(400px) translateY(-14rem);
+}
+
+#card-cont {
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------        ----------- */
+/* SING IN CARD */
+#singin-card {
+    background-image: url("../Resources/Diseño\ sin\ título.svg");
     width: 100vw;
     height: 100vh;
     background-size: cover;
     background-attachment: fixed;
-    display: flex;
-    background-attachment: fixed;
-    align-items: center;
-    justify-content: center;
-    background-image: url(https://historia.nationalgeographic.com.es/medio/2020/11/25/ada-lovelace-portrait_8c43f25b_1200x630.jpg);
 }
 
-.head1 {
+#container-grad {
+    background: rgb(10, 0, 131);
+    background: linear-gradient(-90deg,
+            rgba(10, 0, 131, 1) 0%,
+            rgba(21, 0, 131, 0.8587885837928921) 43%,
+            rgba(34, 0, 130, 0) 100%);
+    width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#cnt1 {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card {
+    width: 30vw;
+    height: 20vw;
+    padding: 5px;
+    background: rgb(58, 0, 135);
+    background: linear-gradient(28deg,
+            rgba(58, 0, 135, 0.8335784997592788) 0%,
+            rgba(61, 232, 255, 0.8475841020001751) 100%);
+    border-radius: 15px;
+    transform: skewY(3deg) skewX(3deg);
+    backdrop-filter: blur(5px);
+    border-bottom: solid 3px #6034ff;
+    border-left: solid 3px #6034ff;
+    border-top: solid 1px #6034ff91;
+    border-right: solid 1px #6034ff91;
+}
+
+#cnt1-1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#logo-- {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#logo-- img {
+    filter: invert(1) drop-shadow(0px 0px 5px #000);
+}
+
+#logo-- p {
+    font-family: "Berkslund";
+    text-shadow: 0px 0px 5px #000;
+}
+
+.custom-shape-divider-bottom-1700610922 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1700610922 svg {
+    position: relative;
+    display: block;
+    width: calc(147% + 1.3px);
+    height: 200px;
+}
+
+.custom-shape-divider-bottom-1700610922 .shape-fill {
+    fill: #370c76bd;
+}
+
+#cnt2 {
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cnt2-2 {
+    width: 30vw;
+    height: 80vh;
+    border-radius: 10px;
+    background: rgb(110, 0, 255);
+    background: linear-gradient(229deg,
+            rgba(110, 0, 255, 0.4105100658427433) 35%,
+            rgba(61, 210, 255, 0.4245156680836397) 100%);
+    border: 2px solid rgb(19, 0, 164);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0px 0px 40px #000000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: scale-down;
+}
+
+#cnt2-2 h3 {
+    font-style: normal;
+}
+
+#sng-frm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vh;
+}
+
+.circles {
+    align-self: flex-end;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.c1 {
+    background-color: rgba(255, 0, 0, 0.604);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.c2 {
+    background-color: rgb(242, 255, 0);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateX(-10px);
+    z-index: -100;
+}
+
+#chip {
+    margin-left: 20px;
+    align-self: start;
+    background-color: rgb(234, 183, 16);
+    width: 40px;
+    height: 30px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#chip>span {
+    background-color: #000000ab;
+    width: 100%;
+    height: 1px;
+}
+
+#cnt1-1 span {
+    text-shadow: 0px 0px 3px gray;
+}
+
+.neon {
+    text-shadow: 0px 0px 10px var(--columbia-blue);
+}
+
+/* ------------  ------------- */
+#sng-frm {
+    font-family: "Segoe UI", sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+}
+
+#sng-frm input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 300px;
+}
+
+#sng-frm label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(255, 255, 255);
+}
+
+#sng-frm :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(0.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e800;
+}
+
+#sng-frm :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+}
+
+footer {
+    background-image: url('../Resources/Diseño\ sin\ título.svg');
+    width: 100vw;
+    height: auto;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.degrad {
+    width: 100%;
+    height: 100%;
+    background: rgb(10, 0, 131);
+    background: linear-gradient(-90deg,
+            rgba(10, 0, 131, 1) 0%,
+            rgba(21, 0, 131, 0.8587885837928921) 43%,
+            rgba(34, 0, 130, 0) 100%);
+}
+
+.socials {
     width: 100vw;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #ffff;
+    justify-content: center;
 }
 
-h1 {
-    font-size: 8rem;
-    text-shadow: 2px 2px #0000;
-    font-family: Merriweather, serif;
+.icons-list {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon {
+    list-style: none;
+    width: 3rem;
+    height: 3rem;
+}
+
+.icon img {
+    width: 100%;
+    height: auto;
+    filter: invert(1);
+}
+
+#myButton {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
