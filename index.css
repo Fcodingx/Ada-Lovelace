@@ -4,8 +4,10 @@
     padding: 0%;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color: #fff;
-    font-family: "Dosis", sans-serif;
+    color: #000000;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-decoration: none;
     list-style: none;
 }
@@ -14,34 +16,26 @@
     width: 0px;
 }
 
-@font-face {
-    font-family: "Berkslund";
-    src: local("Berkslund Bold"), local("Berkslund-Bold"),
-        url("Berkslund-Bold.woff2") format("woff2"),
-        url("Berkslund-Bold.woff") format("woff"),
-        url("Berkslund-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
 :root {
-    --greyblue: #1e2851;
-    --medium-blue: #2f00bdff;
-    --byzantine-blue: #1c4fcdff;
-    --french-blue: #1276d5ff;
-    --celestial-blue: #089ddcff;
-    --sky-blue: #84ceeeff;
-    --columbia-blue: #c2e7f7ff;
+    --greyblue: #ffffff;
+    --medium-blue: rgb(214, 194, 168);
+    --byzantine-blue: rgb(191, 227, 155);
+    --french-blue: rgb(181, 150, 113);
+    --celestial-blue: rgb(164, 129, 96);
+    --sky-blue: rgb(235, 239, 114);
+    --columbia-blue: rgb(253, 243, 194);
     --white: #ffffffff;
-    --navcolor: #18013565;
+    --navcolor: #7e653365;
 }
 
 h2 {
     padding: 40px;
     text-align: center;
     font-size: 4rem;
-    font-family: "Dosis", sans-serif;
-    color: #fff;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #000000;
 }
 
 h3 {
@@ -49,8 +43,10 @@ h3 {
     padding: 40px;
     text-align: center;
     font-size: 2.5rem;
-    font-family: "Dosis", sans-serif;
-    color: #fff;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #000000;
 }
 
 /*........................................................................................................................................................................................................................................... */
@@ -165,7 +161,7 @@ h3 {
 }
 
 body {
-    background-color: var(--greyblue);
+    -color: var(--greyblue);
 }
 
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ................_____________________________------------------- */
@@ -206,8 +202,8 @@ nav {
 }
 
 #logo-name {
-    font-family: "Berkslund";
-    color: var(--white);
+    font-family: "  font-family: " Roboto Slab", serif;";
+    color: #ffffff;
     font-size: 2rem;
     text-shadow: 0px 3px 3px #000;
 }
@@ -233,15 +229,15 @@ nav {
 /* ESTILOS DE HEADER */
 
 #logoname- {
-    font-family: "Berkslund";
+    font-family: "  font-family: " Roboto Slab", serif;";
     color: var(--medium-blue);
     font-size: 10rem;
     font-weight: 900;
-    text-shadow: 10px 10px 10px #00000097;
+    text-shadow: 10px 10px 10px #ffffff97;
 }
 
 header {
-    background-image: url(../Resources/Diseño\ sin\ título.svg);
+    background-image: url(img/198e75db-9d02-452a-bd65-86fb96dd86cb.jpg);
     height: 100vh;
     background-size: cover;
     display: flex;
@@ -262,17 +258,12 @@ header {
 
 .header-logo {
     font-weight: 700;
-    font-family: "Alegreya Sans SC", sans-serif;
-    color: var(--white);
+    color: #ffffff;
     font-size: 10rem;
 }
 
 #translatexy {
     transform: translateX(-100px) translateY(-20px);
-}
-
-#translate-xy {
-    transform: translateX(100px) translateY(-20px);
 }
 
 #btn-start {
@@ -282,8 +273,10 @@ header {
     width: 210px;
     padding: 15px;
     border-radius: 50px;
-    color: #fff;
-    font-family: "Dosis", sans-serif;
+    color: #ffffff;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: 600;
     font-size: 1.3rem;
     text-decoration: none;
@@ -309,7 +302,7 @@ header {
 
 #btn-start:hover {
     letter-spacing: 3px;
-    box-shadow: 0px 4px 40px rgb(62, 2, 240);
+    box-shadow: 0px 4px 40px rgb(255, 203, 125);
     transition: 0.8s;
     border: solid 3px var(--white);
 }
@@ -322,7 +315,7 @@ header {
 }
 
 #animation-roll>p {
-    font-family: "Alegreya Sans SC", sans-serif;
+    font-family: "Roboto Slab", serif;
     font-size: 10rem;
     font-weight: 600;
     color: var(--celestial-blue);
@@ -335,7 +328,7 @@ header {
 #HOMEPAGE {
     width: 100vw;
     height: 100vh;
-    background-color: #1e2851;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
 }
@@ -349,17 +342,21 @@ header {
 .pps {
     text-align: center;
     width: 40vw;
-    font-family: "DOSIS", sans-serif;
-    font-size: 2rem;
-    color: var(--white);
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #000000;
 }
 
 .ps {
     text-align: center;
     width: 40vw;
-    font-family: "DOSIS", sans-serif;
-    font-size: 2rem;
-    color: var(--celestial-blue);
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #752912;
 }
 
 #p-cnt {
@@ -374,21 +371,18 @@ header {
 .glow {
     padding: 40px;
     text-align: center;
-    font-size: 4rem;
-    background: linear-gradient(-90deg,
-            rgba(28, 79, 205, 1) 0%,
-            rgba(8, 157, 220, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    color: #000;
     font-weight: 600;
-    font-family: "Alegreya Sans SC", sans-serif;
+    font-family: "Roboto Slab", serif;
 }
 
 #asd {
     width: 40vw;
     height: 100vh;
     background-attachment: fixed;
-    background-image: url("../Resources/bck-hp.jpg");
+    background-size: contain;
+    background-image: url("img/cb074141-d64e-4dfa-8754-09b15dabd17e.jpg");
 }
 
 .grad {
@@ -430,15 +424,16 @@ header {
 
 #DALU {
     font-style: normal;
-    font-family: "Berkslund";
+    font-family: "Roboto Slab",
+        serif;
     text-shadow: 0px 0px 10px var(--medium-blue);
 }
 
 #sec-hp {
-    padding: 5vh 0 0 10px;
+    padding: 50px 0 0 50px;
     width: 100vw;
     height: 110vh;
-    background-color: #1e2851;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -462,8 +457,8 @@ header {
 }
 
 .shadow-svg {
-    width: 25vw;
-    height: 25vh;
+    width: 20vw;
+    height: auto;
     filter: drop-shadow(0px 0px 3px var(--french-blue)) contrast(150%);
     view-timeline-name: --image;
     view-timeline-axis: block;
@@ -489,10 +484,7 @@ header {
     display: block;
     width: 70px;
     height: 5px;
-    background: rgb(28, 79, 205);
-    background: linear-gradient(90deg,
-            rgba(28, 79, 205, 1) 0%,
-            rgba(8, 157, 220, 1) 100%);
+    background: rgb(107, 57, 17);
     border-radius: 10px;
 }
 
@@ -519,19 +511,17 @@ header {
     color: var(--celestial-blue);
     font-weight: 600;
     text-wrap: balance;
-    font-family: "Alegreya Sans SC", sans-serif;
+    font-family: "Roboto Slab", serif;
 }
 
 .txt-grad::after {
     content: "";
     display: block;
-    background: linear-gradient(100deg,
-            rgba(28, 79, 205, 1) 0%,
-            rgba(8, 157, 220, 1) 100%);
+   background-color: #752912;
     height: 15rem;
     width: 8px;
     border-radius: 10px;
-    transform: translateX(400px) translateY(-14rem);
+    transform: translateX(400px) translateY(-10rem);
 }
 
 #card-cont {
@@ -613,7 +603,7 @@ header {
 }
 
 #logo-- p {
-    font-family: "Berkslund";
+    font-family: "  font-family: " Roboto Slab", serif;";
     text-shadow: 0px 0px 5px #000;
 }
 
