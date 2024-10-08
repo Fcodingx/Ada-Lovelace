@@ -28,6 +28,213 @@
     --navcolor: #7e653365;
 }
 
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    padding: 3rem;
+}
+
+.content h3 {
+    font-size: 2rem;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto Slab';
+    margin: 3rem;
+    text-align: center;
+}
+
+
+.content h3::after {
+    content: '';
+    display: block;
+    height: 7px;
+    z-index: -1;
+    position: relative;
+    width: 80%;
+    border-radius: 10px;
+    background: #752912;
+
+}
+
+.containerr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 400vh;
+    padding: 20px;
+}
+
+.txt {
+    width: 49vw;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20vh;
+    padding: 4rem;
+}
+
+.txt p {
+    width: 30vw;
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    font-size: 2rem;
+    filter: drop-shadow(-10px 0px 20px #000);
+    align-items: center;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.txt img {
+    height: 50vh;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+    filter: drop-shadow(-10px 0px 20px #000);
+}
+
+.circle {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(0, 15, 255, 1) 11%, rgba(61, 210, 255, 1) 100%);
+    border: 5px solid var(--greyblue);
+}
+
+.line {
+    width: 0.1vw;
+    height: 100%;
+    filter: drop-shadow(0px 0px 10px #fff);
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    height: 100%;
+}
+
+.images p {
+    width: 30vw;
+    height: 55vh;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.images img {
+    height: 50vh;
+    filter: drop-shadow(-10px 0px 20px #000);
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+hr {
+    position: relative;
+    left: 15vw;
+    width: 70vw;
+}
+
+/* N
 h2 {
     padding: 40px;
     text-align: center;
@@ -285,8 +492,13 @@ header {
     flex-direction: column;
 }
 
+#more {
+    color: #ffffff;
+}
+
 .btn-scroll:hover #more {
     animation: flecha 0.8s infinite ease-in-out;
+    color: #ffffff;
 }
 
 .btn-scroll {
@@ -298,6 +510,7 @@ header {
     justify-content: center;
     flex-direction: column;
     transform: translateY(100px);
+    color: #ffffffff;
 }
 
 #btn-start:hover {
@@ -430,7 +643,7 @@ header {
 }
 
 #sec-hp {
-    padding: 50px 0 0 50px;
+    padding: 50px;
     width: 100vw;
     height: 110vh;
     background-color: #ffffff;
@@ -454,10 +667,11 @@ header {
     font-size: 1.3rem;
     text-align: center;
     text-wrap: balance;
+    padding: 20px;
 }
 
 .shadow-svg {
-    width: 20vw;
+    width: 10vw;
     height: auto;
     filter: drop-shadow(0px 0px 3px var(--french-blue)) contrast(150%);
     view-timeline-name: --image;
@@ -517,7 +731,7 @@ header {
 .txt-grad::after {
     content: "";
     display: block;
-   background-color: #752912;
+    background-color: #752912;
     height: 15rem;
     width: 8px;
     border-radius: 10px;
@@ -763,6 +977,65 @@ footer {
     height: auto;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.slidess {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.slider-container {
+    width: 80vw;
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.but {
+    padding: 10px;
+    bottom: 40vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    opacity: 0;
+    transition: opacity 1s;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+button {
+    border: none;
+    background-color: #fff;
+    padding: 2px;
+    border-radius: 50%;
+    color: #000;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
 }
 
 .degrad {
